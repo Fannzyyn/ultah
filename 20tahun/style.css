@@ -1,0 +1,209 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to bottom, #f9f9f9, #eaeaea);
+    color: #333;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Header */
+header h1 {
+    margin-bottom: 30px;
+    font-size: 2rem;
+    color: #555;
+}
+
+/* Galeri */
+.gallery-page {
+    display: none;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin-bottom: 20px;
+    justify-items: center;
+    align-items: center;
+}
+
+.gallery-page.active {
+    display: grid;
+}
+
+/* Foto */
+/* Bingkai Foto */
+.photo {
+    position: relative;
+    overflow: hidden;
+    border: 5px solid #fff;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+    background: linear-gradient(to bottom, #ffefba, #ffb6b9);
+    margin-bottom: 15px;
+}
+
+/* Efek Hover untuk Foto */
+.photo:hover {
+    transform: scale(1.05); /* Zoom in saat hover */
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3); /* Bayangan lebih tebal */
+    border: 5px solid #ff6f61; /* Border berubah saat hover */
+}
+
+/* Foto di dalam bingkai */
+.photo img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 15px; /* Border foto lebih halus */
+}
+
+/* Interaktif */
+.photo.interactive img.hidden {
+    display: none;
+}
+
+/* Navigasi */
+.navigation {
+    margin-top: 20px;
+}
+
+/* Tombol */
+button {
+    padding: 12px 30px;
+    background: linear-gradient(135deg, #ff6f61, #ff8f61); /* Gradasi warna */
+    color: white;
+    border: 2px solid #ff6f61;
+    border-radius: 25px;  /* Sudut lebih bulat */
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out; /* Transisi untuk efek hover */
+    margin: 10px;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #ff8f61, #ff6f61); /* Hover gradasi terbalik */
+    transform: scale(1.05);  /* Zoom in saat hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Bayangan saat hover */
+}
+
+button:focus {
+    outline: none; /* Menghilangkan outline saat fokus */
+}
+
+
+/* Responsif */
+@media (max-width: 768px) {
+    .gallery-page {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 10px 15px;
+    }
+}
+
+/*tambahan
+/* Halaman Pertama */
+/* Halaman Ulang Tahun */
+.birthday-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: linear-gradient(to top, #f9a8d4, #fdbb8d); /* Gradasi cerah */
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.birthday-page h1 {
+    font-size: 3rem;
+    color: #d6336c;
+    margin-bottom: 20px;
+    animation: fadeIn 2s ease-in-out;
+    font-family: 'Pacifico', cursive; /* Font yang lebih ceria */
+}
+
+.birthday-page p {
+    font-size: 1.5rem;
+    color: #555;
+    margin-bottom: 30px;
+    font-family: 'Quicksand', sans-serif; /* Font lebih ringan */
+}
+
+.birthday-page button {
+    padding: 15px 35px;
+    background-color: #ff72b9;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s ease-in-out;
+}
+
+.birthday-page button:hover {
+    background-color: #e14482;
+    transform: scale(1.1); /* Zoom effect */
+}
+
+
+/* Ledakan Love */
+/* Tambahan untuk hearts-container */
+.hearts-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 10;
+    overflow: hidden;
+    pointer-events: none;  /* Agar tidak mengganggu interaksi pengguna */
+}
+
+/* Animasi Love */
+@keyframes heartAnimation {
+    0% {
+        transform: scale(0.5) rotate(0deg);
+        opacity: 0.5;
+    }
+    50% {
+        transform: scale(1.5) rotate(45deg);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0.5) rotate(90deg);
+        opacity: 0;
+    }
+}
+
+/* Love effect yang lebih cerah */
+.heart {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: #ff6f61;
+    clip-path: polygon(50% 0%, 0% 50%, 50% 100%, 100% 50%);
+    animation: heartAnimation 4s ease-in-out infinite;
+    opacity: 0;
+}
+
+
+.hidden {
+    display: none;
+}
+
+

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kenangan Kita</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>Kenangan Manis Kita</h1>
+        </header>
+
+        <!-- Halaman Galeri -->
+        <div class="gallery-page active" id="page-1">
+            <div class="photo"><img src="/berdua1.JPG" alt="Foto Berdua 1"></div>
+            <div class="photo"><img src="/berdua2.jpg" alt="Foto Berdua 2"></div>
+            <div class="photo"><img src="/berdua3.jpg" alt="Foto Berdua 3"></div>
+            <div class="photo"><img src="/berdua4.jpg" alt="Foto Berdua 4"></div>
+            <button class="next-btn" onclick="goToPage(2)">Halaman Berikutnya</button>
+        </div>
+
+        <div class="gallery-page" id="page-2">
+            <div class="photo"><img src="/Berdua5.jpg" alt="Foto Berdua 5"></div>
+            <div class="photo"><img src="/Berdua6.jpg" alt="Foto Berdua 6"></div>
+            <div class="photo"><img src="/berdua7.jpg" alt="Foto Berdua 7"></div>
+            <div class="photo"><img src="/berdua8.jpg" alt="Foto Berdua 8"></div>
+            <button class="prev-btn" onclick="goToPage(1)">Halaman Sebelumnya</button>
+        </div>
+
+        <div class="gallery-page" id="page-3">
+            <div class="photo"><img src="/spesial.jpg" alt="Foto Sendiri 1"></div>
+            <div class="photo"><img src="/sendiri2.jpg" alt="Foto Sendiri 2"></div>
+            <div class="photo"><img src="/sendiri3.jpg" alt="Foto Sendiri 3"></div>
+            <div class="photo"><img src="/sendiri4.jpg" alt="Foto Sendiri 4"></div>
+        </div>
+
+        <div class="gallery-page" id="page-4">
+            <div class="photo interactive" onclick="showNextPhoto(this)">
+                <img src="/anakecil.jpg" alt="Masa Kecil">
+                <img src="/mts1.jpg" alt="Masa SMP" class="hidden">
+            </div>
+        </div>
+
+        <!-- Navigasi -->
+        <div class="navigation">
+            <button onclick="goToPage(1)">Galeri Berdua</button>
+            <button onclick="goToPage(3)">Foto Sendiri</button>
+            <button onclick="goToPage(4)">Masa Kecil</button>
+        </div>
+    </div>
+    <audio controls autoplay loop>
+        <source src="/goodtime.mp3" type="audio/mpeg">
+        Your browser does not support the audio tag.
+    </audio>
+    <div id="birthday-page" class="birthday-page active">
+        <div class="message">
+            <h1>Selamat Ulang Tahun, Sayang! 🎉</h1>
+            <p>Aku punya kejutan manis untukmu... 🎁</p>
+            <button onclick="showExplosion()">Lihat Kejutan</button>
+        </div>
+        <div class="hearts-container hidden" id="hearts-container"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
